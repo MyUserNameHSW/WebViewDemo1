@@ -106,6 +106,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	//获取img组件
 	private List<String> getImageUrl(String HTML) {
 		Matcher matcher = Pattern.compile(IMGURL_REG).matcher(HTML);
 		List<String> listImgUrl = new ArrayList<String>();
@@ -114,7 +115,8 @@ public class MainActivity extends Activity {
 		}
 		return listImgUrl;
 	}
-
+    
+	//获取具体路径
 	private List<String> getImageSrc(List<String> listImageUrl) {
 		List<String> listImgSrc = new ArrayList<String>();
 		for (String image : listImageUrl) {
