@@ -97,16 +97,15 @@ public class MainActivity extends Activity {
 	final class InJavaScriptLocalObj {
 		public void showSource(String html) {
 			// String[] path = getImg1(html);
-			 List<String> list = getImageSrc(getImageUrl(html));
-			 for (int i = 0; i < list.size(); i++) {
-			 Log.e("path", list.get(i)+"");
-			 }
-			
-			
+			List<String> list = getImageSrc(getImageUrl(html));
+			for (int i = 0; i < list.size(); i++) {
+				Log.e("path", list.get(i) + "");
+			}
+
 		}
 	}
 
-	//获取img组件
+	// 获取img组件
 	private List<String> getImageUrl(String HTML) {
 		Matcher matcher = Pattern.compile(IMGURL_REG).matcher(HTML);
 		List<String> listImgUrl = new ArrayList<String>();
@@ -115,8 +114,8 @@ public class MainActivity extends Activity {
 		}
 		return listImgUrl;
 	}
-    
-	//获取具体路径
+
+	// 获取具体路径
 	private List<String> getImageSrc(List<String> listImageUrl) {
 		List<String> listImgSrc = new ArrayList<String>();
 		for (String image : listImageUrl) {
@@ -127,5 +126,11 @@ public class MainActivity extends Activity {
 			}
 		}
 		return listImgSrc;
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
 	}
 }
